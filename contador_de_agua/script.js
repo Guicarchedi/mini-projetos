@@ -1,15 +1,31 @@
-var contador = 0;
+var contador = 1;
+var totalAgua = contador * 250;
 var textoC = document.getElementById("textoContagem");
 var mensagemC = document.getElementById("mensagemContador")
 var btnBebiAgua = document.getElementById("bebiAgua");
 var btnResetar = document.getElementById("resetar");
+var progresso = document.getElementById("progresso");
+var copos = document.querySelectorAll(".copo")
 
 btnBebiAgua.addEventListener("click", bebiAgua);
 btnResetar.addEventListener("click", resetar);
 
+function atualizarCopos(){
+    copos.forEach(function(copo) {
+        copo.classList.remove("ativo");
+    });
+    if (contador < copos.length) {
+        copos[contador].classList.add("ativo");
+    }
+}
+
 function bebiAgua() {
+    var totalAgua = contador * 250;
+
     contador++;
-    textoC.innerHTML = `Você bebeu: ${contador} copos de agua` 
+    textoC.innerHTML = `Você bebeu: ${contador} copos de agua`;
+    progresso.innerHTML = `Progresso: ${totalAgua}ml de água`;  
+    atualizarCopos()
 
     if (contador == 8) {
         mensagemC.innerHTML = "Bom, você já tomou o minimo recomendado."
@@ -42,4 +58,5 @@ function resetar() {
     textoC.innerHTML = "Você bebeu: 0 copos de água"
     mensagemC.innerHTML = ""
     textoC.style.color = "black"
+    
 }
