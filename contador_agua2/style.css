@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+:root{
+    --cor-fundo: #f0f8ff;
+    --cor-botoes: #0077b6;
+    --cor-destaque: #48cae4;
+    --cor-texto: #023e84;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cabecalho{
+    background-color: white;
+    color: var(--cor-texto);
+    padding: 20px;
+    margin-bottom: 1em;
+
+    & h1{
+        font-size: 1.8rem;
+        margin: 0.3em;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.212);
+    }
+}
+
+.corpo{
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.185);
+    max-width: 80%;
+    height: 80%;
+    margin: 0 auto;
+
+    & .contador{
+        background-color: var(--cor-destaque);
+        color: var(--cor-texto);
+        padding: 20px;
+
+        & p{
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0.3em;
+        }
+    }
+
+    & .barra-progresso{
+        position: absolute;
+        left: 50%;
+        top: 63%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        & .barra{
+            background-color: var(--cor-fundo);
+            width: 7%;
+            height: 300px;
+            padding: 10px;
+            position: relative;
+
+            & #displayBarra{
+                background-image: linear-gradient(to top, var(--cor-destaque) 10%, white 0%);
+                width: 50%;
+                height: 90%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        & .progresso{
+            background-color: var(--cor-botoes);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease-in-out;
+        }
+    }
+
+    & .botoes{
+
+    }
+}
