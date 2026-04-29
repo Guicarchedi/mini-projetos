@@ -32,6 +32,7 @@ function adicionar(){
 function resetar(){
     contador = 0;
     display.innerHTML = contador;
+    mensagem.innerHTML = "";
 
     if (contador == 0) {
         display.style.color = "red";

@@ -20,6 +20,7 @@ body{
     margin: 100px auto;
     padding: 1em;
     position: relative;
+    text-align: center;
 }
 
 h1{
@@ -38,6 +39,11 @@ h1{
 p{
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+#displayConteudo{
+    font-size: 3rem;
+    color: #007BFF;
 }
 
 .botoes{
