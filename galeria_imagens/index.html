@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <section class="inner-header">
+            <h1>Galeria</h1>
+            <div class="controls">
+                <button id="botaoFiltro" type="button">Filtrar</button>
+            </div>
+            <div class="filtro_imagem hide">
+                <label for="filtro-data">Data início:</label>
+                <input type="date" name="filtro-data" id="filtro-data">
+
+                <label for="filtro-data-fim">Data fim:</label>
+                <input type="date" name="filtro-data-fim" id="filtro-data-fim">
+
+                <button id="botaoFiltrar" type="button">Buscar</button>
+                <button id="botaoLimpar" type="button">Limpar</button>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="upload-panel">
+            <form id="formUpload">
+                <label for="imagem">Selecione imagens:</label>
+                <input type="file" name="imagem" id="imagem" accept="image/*" multiple>
+
+                <label for="data-imagem">Data da imagem:</label>
+                <input type="date" id="data-imagem" name="data-imagem">
+
+                <label for="descricao">Descrição:</label>
+                <textarea name="descricao" id="descricao" placeholder="Digite uma descrição para a imagem"></textarea>
+
+                <button type="submit" id="enviarImagem">Adicionar à galeria</button>
+            </form>
+        </section>
+
+        <article class="galeria">
+            <section class="inner-galeria">
+                <h2>Galeria de Imagens</h2>
+                <div id="mensagem" class="mensagem">Adicione imagens para ver a galeria.</div>
+                <div class="imagens" id="galeria"></div>
+            </section>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
